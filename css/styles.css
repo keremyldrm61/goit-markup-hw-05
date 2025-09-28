@@ -1,0 +1,747 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Resetting Global Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    color: #434455;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1158px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* Header */
+.page-header {
+    border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 
+        0px 1px 1px rgba(46, 47, 66, 0.16), 
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.page-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Figma'daki padding'e göre ayarlamak için */
+    padding-top: 0;
+    padding-bottom: 0;
+    /* Header yüksekliği */
+    height: 72px;
+}
+
+.logo-link {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.166;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-right: 76px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-web {
+    color: #4D5AE5;
+}
+
+.logo-studio {
+    color: #2E2F42;
+}
+
+.menu-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #2E2F42;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    /* Figma'daki dikey boşluk */
+    padding: 24px 0;
+    /* padding'in uygulanması için */
+    display: block;
+    /* ::after için konumlandırma */
+    position: relative;
+    /* C6, C7 */
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #404BBF;
+}
+
+.nav-link.current {
+    color: #404BBF;
+}
+
+.nav-link.current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+    position: absolute;
+    /* Border-bottom'un üzerine gelmesi için */
+    bottom: -1px;
+    left: 0;
+}
+
+.address-info {
+    /* address etiketinin varsayılan italik stilini kaldırmak için */
+    font-style: normal;
+    /* Navigasyon ve adres arasındaki boşluğu otomatik ayarlamak için*/
+    margin-left: auto;
+}
+
+.address-list {
+    display: flex;
+    flex-direction: row;
+    /* Figma'daki boşluk */
+    gap: 40px;
+}
+
+.address-link {
+    color: #434455;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    /* C6, C7 */
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-link:hover,
+.address-link:focus {
+    color: #404BBF;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #2E2F42;
+    text-align: center;
+    /* Figma'daki dikey boşluk */
+    padding: 188px 0;
+    /* C1 */
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/group-people-working-website-template.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 1440px;
+    /* C2 */
+    margin: 0 auto;
+}
+
+.hero-title {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    margin-bottom: 48px;
+    /* Figma'daki genişlik */
+    max-width: 496px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 16px 32px;
+    background-color: #4D5AE5;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Figma'daki gölge */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    /* C6, C7 */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #404BBF;
+}
+
+/* Features Section */
+.features-list {
+    display: flex;
+    gap: 24px;
+}
+
+.features-item {
+    /* 3 * 24px = 72px boşluk */
+    flex-basis: calc((100% - 72px) / 4);
+}
+
+.features-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #F4F4FD;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.features-icon {
+    /* Figma'daki simge rengi */
+    fill: #2E2F42;
+}
+
+.features-title {
+    color: #2E2F42;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.features-text {
+    color: #434455;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+/* Team Section */
+.team {
+    background-color: #F4F4FD;
+}
+
+.section-title {
+    color: #2E2F42;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    /* Figma'daki stil */
+    text-transform: capitalize;
+    margin-bottom: 72px;
+}
+
+.team-list {
+    display: flex;
+    gap: 24px;
+}
+
+.team-item {
+    background-color: #FFFFFF;
+    text-align: center;
+    /* Figma'daki border-radius */
+    border-radius: 0px 0px 4px 4px;
+    /* C3 */
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.team-card-content {
+    /* Figma'daki padding'e göre ayarlamak için */
+    padding: 32px 0;
+}
+
+.team-name {
+    color: #2E2F42;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    color: #434455;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    /* Sosyal medya ikonları ile arasındaki boşluk */
+    margin-bottom: 8px;
+}
+
+.social-links-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-links-item {
+    width: 40px;
+    height: 40px;
+}
+
+.social-links-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    /* C6, C7 */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links-link:hover,
+.social-links-link:focus {
+    background-color: #404BBF;
+}
+
+.social-links-icon {
+    fill: #F4F4FD;
+}
+
+/* Portfolio Section */
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Figma'daki boşluklar */
+    gap: 48px 24px;
+}
+
+.portfolio-item {
+    background-color: #FFFFFF;
+    /* 2 * 24px = 48px boşluk */
+    flex-basis: calc((100% - 48px) / 3);
+    /* C4, C6, C7 */
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    /* C4 */
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    padding: 40px 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    /* C9 | Başlangıçta gizli kalması için */
+    transform: translateY(100%);
+    /* C6, C7 */
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    /* C9 | Hover'da görünür olması için */
+    transform: translateY(0);
+}
+
+.portfolio-content {
+    padding: 32px 16px;
+    border: 1px solid #E7E9FC;
+    /* Üst kenarlığı kaldırmak için */
+    border-top: none;
+}
+
+.portfolio-title {
+    color: #2E2F42;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.portfolio-category {
+    color: #434455;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+/* Footer */
+.footer {
+    background-color: #2E2F42;
+    /* Figma'daki dikey boşluk */
+    padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    /* Figma'daki hizalama */
+    align-items: baseline;
+}
+
+.footer-logo-text-wrapper {
+    /* Figma'daki boşluk */
+    margin-right: 120px;
+}
+
+.footer-logo .logo-studio-footer {
+    color: #F4F4FD;
+}
+
+.footer-text {
+    color: #F4F4FD;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    max-width: 264px;
+    margin-top: 16px;
+}
+
+.footer-social {
+    /* Figma'daki boşluk */
+    margin-right: 80px;
+}
+
+.footer-social-text {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.footer .social-links-list {
+    /* Figma'daki hizalama */
+    justify-content: flex-start;
+}
+
+.footer .social-links-link:hover,
+.footer .social-links-link:focus {
+    background-color: #31D0AA;
+}
+
+.footer-subscribe {
+    /* Sağ kenara hizalamak için */
+    margin-left: auto;
+}
+
+.footer-subscribe-text {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 24px;
+}
+
+.subscribe-input {
+    width: 264px;
+    height: 40px;
+    padding: 8px 16px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-input::placeholder {
+    color: #FFFFFF;
+}
+
+.subscribe-input:focus {
+    border-color: #4D5AE5;
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 24px;
+    min-width: 165px;
+    height: 40px;
+}
+
+.subscribe-icon {
+    fill: #FFFFFF;
+}
+
+/* Modal Backdrop ve Modal Pencere */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    /* Başlangıçta gizli */
+    display: none;
+    /* Modal pencereyi yatayda ortalamak için */
+    justify-content: center;
+    /* Modal pencereyi dikeyde ortalamak için */
+    align-items: center;
+    /* Diğer içeriklerin üzerinde olması için */
+    z-index: 999;
+}
+
+.modal-backdrop.is-open {
+    /* is-open sınıfı eklendiğinde görünür hale gelmesi için */
+    display: flex;
+}
+
+.modal-window {
+    position: relative;
+    width: 408px;
+    min-height: 584px;
+    background-color: #FCFCFC;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+    padding: 72px 24px 24px 24px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404BBF;
+    border: none;
+}
+
+.modal-close-icon {
+    fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+    fill: #FFFFFF;
+}
+
+.modal-title {
+    color: #2E2F42;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.modal-form-field {
+    margin-bottom: 8px;
+}
+
+.modal-form-field.comment-field {
+    margin-bottom: 16px;
+}
+
+.modal-form-field.checkbox-field {
+    margin-bottom: 24px;
+}
+
+.modal-label {
+    display: block;
+    color: #8E8F99;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+.modal-input-wrap {
+    position: relative;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: #4D5AE5;
+}
+
+.modal-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus+.modal-input-icon {
+    fill: #4D5AE5;
+}
+
+.modal-textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    resize: none;
+    outline: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea:focus {
+    border-color: #4D5AE5;
+}
+
+.modal-checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+}
+
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-checkbox:checked+.modal-checkbox-label .custom-checkbox {
+    background-color: #404BBF;
+    border: none;
+    fill: #f4f4fd;
+}
+
+.privacy-policy-link {
+    color: #4D5AE5;
+    text-decoration: underline;
+    margin-left: 4px;
+}
+
+.modal-submit-btn {
+    display: block;
+    margin: 0 auto;
+    min-width: 169px;
+    height: 56px;
+}
